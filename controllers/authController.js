@@ -45,3 +45,8 @@ module.exports.loginUser =  async function(req, res){
         else return res.send("Email or Password incorrect");
     });
 };
+
+module.exports.logout = function(req, res){
+    res.cookie('token', "");
+    res.redirect('/');
+};
